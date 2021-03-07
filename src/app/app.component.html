@@ -1,10 +1,99 @@
+<!-- 
+string interpolation
+property databinding
+event databinding
+two way databinding -->
+
+<!-- {{customerName}} -->
+
+<!-- <input type="text" value="{{customerName}}">
+
+
+<input type="text" value="{{getCustomerName()}}">
+
+
+<br>
+
+
+<input [type]="inputtype"
+placeholder="Enter the Customer Name">
+
+<br>
+
+<input type="textbox"
+ value="somthing"
+ [disabled]="IsDisabled"> -->
+
+<!-- <input type="checkbox"> -->
+
+
+<!-- <button>Click Me</button> -->
+
+<!-- <input value="Show" type="button" (click)="getContactName()"> -->
+<!-- 
+
+<br>
+
+<input type="text" (keyup)="evtChanges($event)" [value]="Adress">
+<p style="background-color:yellow">{{Adress}}</p>
+
+
+<input type="text" [(ngModel)]="Adress1">
+<p style="background-color:greenyellow">{{Adress1}}</p>
+ -->
 
 
 
-<input type="text">
-
-<input type="button" value="Click Me" >
-<input type="text" >
-
-<app-customer></app-customer>
-
+ <div [ngClass]="{MyOwnClassParagraph:IsCustomerBGClass}" *ngIf="IsAlfredsCustomerAvailble">
+    <!-- <p style="background-color:yellow">{{Adress}}</p> -->
+    <p [ngStyle]="{'background-color':customerBGColor}">
+      Iam {{customerName}} and staying in {{Adress}}
+    </p>
+  </div>
+  
+  
+  
+  <!-- <ul>
+     <li>Berglunds snabbköp</li>
+     <li>Blauer See Delikatessen</li>
+     <li>Blondesddsl</li>
+     <li>Bólido Comidas preparadas</li>
+  </ul> -->
+  
+  
+  <ul>
+    <li *ngFor="let company of companyNames">
+      {{company}}
+    </li>
+  </ul>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Customer ID
+        </th>
+        <th>
+          Customer Name
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let customer of Customers">
+        <td>
+          {{customer.CustomerID}}
+        </td>
+        <td>
+          {{customer.CompanyName}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  <!--ngif 
+  ngstyle
+  ngclass
+  ngfor
+  ngswitch -->
