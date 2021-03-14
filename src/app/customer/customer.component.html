@@ -1,16 +1,55 @@
+<div style="padding: 10px;">
+    <h6>
+        Customer Component
+    </h6>
+</div>
+<form>
+    <div class="form-group row">
+        <div class="col-md-2">
+            <label>Customer ID</label>
+        </div>
+        <div class="col-md-5">
+            <input class="form-control" [value]="inCID" placeholder="Enter CustomerID" type="text" #CustomerID>
+            <!-- HTML input element -->
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-2">
+            <label>Company Name</label>
+        </div>
+        <div class="col-md-5">
+            <input class="form-control" [value]="inCompName" placeholder="Enter Company Name" type="text" #CompanyName>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-2">
+            <label>Contact Name</label>
+        </div>
+        <div class="col-md-5">
+            <input class="form-control" [value]="inContName" placeholder="Enter Contact Name" type="text" #ContactName>
+            <!-- <select #something></select> -->
+        </div>
+    </div>
 
+    <ng-content></ng-content>
 
+    <div class="form-group row">
+        <div class="col-md-2">
+            <!-- <label>Contact Name</label> -->
+        </div>
+        <div class="col-md-5">
+            <!-- <input class="btn btn-primary" (click)="AddCustomer(CustomerID,CompanyName,ContactName)" value="Add"
+                type="button"> | -->
 
-<p>this is simple</p>
+            <input class="btn btn-secondary" (click)="AddOneCustomer()" value="Add" type="button">
+            |
+            <input class="btn btn-danger" (click)="ClearCustomer()" value="Clear" type="button">
 
-<!-- 
+        </div>
+    </div>
+    <!-- {{customer.CustomerID}} -->
 
-<input class="RedClassInput" type="text" placeholder="Enter customer">
-<input class="YellowClassInput"  type="text" placeholder="Enter customer">
-<input type="text" placeholder="Enter customer"> -->
+    <!-- Inputting the data {{inCustomer.CustomerID}} -->
 
-
-<!-- <div [app-customers]></div> -->
-<!-- <div class="app-customers"></div> -->
-
-<app-customers></app-customers>
+    <!-- {{inCID}} -- {{inCompName}} -- {{inContName}} -->
+</form>

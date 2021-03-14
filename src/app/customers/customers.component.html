@@ -1,4 +1,80 @@
+<div style="background-color: aliceblue;">
+
+    <!-- CustomerData -->
+    <!-- CID
+    CompName
+    ContactName -->
+    <app-customer [inCID]="CID" [inCompName]="CompName" [inContName]="ContactName"
+        (customerEmitter)="onAddCustomer($event)">
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>City Name</label>
+            </div>
+            <div class="col-md-5">
+                <input class="form-control" 
+                placeholder="Enter City Name" 
+                type="text" [value]="CityName" #cusCityName>
+            </div>
+        </div>
+    </app-customer>
 
 
+    <!-- customerEmitter which represents the event emiiter which
+    is decarated by the @output -->
 
-<input type="text" placeholder="Enter Customers....................">
+    <!-- <input type="text" (click)="onClick($event)"> -->
+
+</div>
+
+<div style="padding: 10px;">
+    <h6>
+        Customers Component
+    </h6>
+</div>
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Row Number
+                </th>
+                <th>
+                    Customer ID
+                </th>
+                <th>
+                    Company Name
+                </th>
+                <th>
+                    Contact Name
+                </th>
+                <th>
+                    City
+                </th>
+                <th>Selected Row</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of Customers;let $index = index">
+                <td>
+                    <!-- <p>My original index is {{$index }} </p> -->
+                    <p style="text-align: center;"> {{$index + 100}}</p>
+                </td>
+                <td>
+                    {{customer.CustomerID}}
+                </td>
+                <td>
+                    {{customer.CompanyName}}
+                </td>
+                <td>
+                    {{customer.ContactName}}
+                </td>
+                <td>
+                    {{customer.City}}
+                </td>
+                <td>
+                    <button (click)="SelectedRecord(customer)" class="btn btn-success">Select</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
