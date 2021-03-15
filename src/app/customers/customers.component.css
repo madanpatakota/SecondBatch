@@ -1,0 +1,10 @@
+
+/* .CustomerFeature{
+    
+} */
+
+.customer-item{
+   justify-content: space-around;
+   align-items: center;
+   margin: 20px;
+}   
